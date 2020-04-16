@@ -25,19 +25,22 @@ SECRET_KEY = 'vq%h1_yyrad6mo*=8la9)s4395+g&(o@&u=rr2@d7&q&a^!x#f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1', '1203c097.ngrok.io']
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'account.apps.AccountConfig',
+    'images.apps.ImagesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django',
+    'sorl.thumbnail',
 ]
 
 MIDDLEWARE = [
@@ -158,3 +161,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 # MEDIA_ROOT – путь в файловой системе, где эти файлы будут храниться. 
 # Мы не задаем этот путь явно, а используем BASE_DIR, чтобы наш код был универсальным.
 
+
+AUTHENTICATION_BACKENDS = [
+'django.contrib.auth.backends.ModelBackend',
+'account.authentication.EmailAuthBackend',
+'social_core.backends.facebook.FacebookOAuth2',
+]
+SOCIAL_AUTH_FACEBOOK_KEY = '697779374382886' # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = '3b3c6ce1d2998bcc0dbdfdd79c88bc89' # Facebook App Secret
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']

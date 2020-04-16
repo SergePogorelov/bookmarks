@@ -24,7 +24,14 @@ urlpatterns = [
     path('', include('account.urls')),
     path('account/', include('account.urls')),
     path('admin/', admin.site.urls),
+    path('social_auth/', include('social_django.urls', namespace='social')),
+    path('images/', include('images.urls', namespace='images'))
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# Теперь сервер разработки Django сможет возвращать медиафайлы при об-
+# ращении к ним по URL’у.
+# Функция static() подходит только для локальной разработки, но не для применения на
+# боевых серверах. Никогда не используйте Django в качестве поставщика статических
+# и медиафайлов.
