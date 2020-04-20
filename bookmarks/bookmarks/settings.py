@@ -25,7 +25,7 @@ SECRET_KEY = 'vq%h1_yyrad6mo*=8la9)s4395+g&(o@&u=rr2@d7&q&a^!x#f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1', '56f1eed4.ngrok.io']
+ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1', '78231b58.ngrok.io']
 
 
 # Application definition
@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1', '56f1eed4.ngrok.io']
 INSTALLED_APPS = [
     'account.apps.AccountConfig',
     'images.apps.ImagesConfig',
+    'actions.apps.ActionsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -109,6 +110,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
+# LANGUAGE_CODE = 'ru'
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -170,3 +173,14 @@ AUTHENTICATION_BACKENDS = [
 SOCIAL_AUTH_FACEBOOK_KEY = '697779374382886' # Facebook App ID
 SOCIAL_AUTH_FACEBOOK_SECRET = '3b3c6ce1d2998bcc0dbdfdd79c88bc89' # Facebook App Secret
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
+
+from django.urls import reverse_lazy
+ABSOLUTE_URL_OVERRIDES = {
+    'auth.user':lambda u: reverse_lazy('user_detail', args=[u.username])
+}
+
+#Это настройки подключения к хранилищу Redis, которое мы будем использовать.
+REDIS_HOST = 'localhost'
+REDIS_PORT = '6379'
+REDIS_DB = 0
