@@ -30,3 +30,5 @@
 - [Pillow](https://pypi.org/project/Pillow/)
 - [Sorl-thumbnail](https://pypi.org/project/sorl-thumbnail/)
 - [Redis](https://redis.io/)
+
+_По книге [Антонио Меле: Django 2 в примерах](https://dmkpress.com/catalog/computer/programming/python/978-5-97060-746-6/)_
