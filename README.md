@@ -45,7 +45,7 @@ cd redis-stable && make
 
 - В файле `/images/static/js/bookmarklet.js` замените URL на новый адрес с протоколом HTTPS:
 
-![var site_url](https://i.imgur.com/3tqbrN9.png)
+![var site_url](https://i.imgur.com/yJK77cS.png)
 
 - Откройте `https://f51819bb1c07.ngrok.io/account/`, заменив ваш домен `Ngrok`.
 - Войдите в аккаунт и перетащите кнопку `BOOKMARK IT` в закладки браузера:
@@ -54,6 +54,16 @@ cd redis-stable && make
 
 - Перейдите на любой сайт и кликните на `BOOKMARK IT`. Вы увидите, как справа
 появился белый блок, содержащий все `JPEG-картинки` текущего сайта с размером больше, чем `100×100` пикселей
+
+![image](https://i.imgur.com/0Q9WzO3.png)
+
+- Нажмите на любую картинку и откроется форма добавления:
+
+![jpeg](https://i.imgur.com/nwLGp35.png)
+
+- После добавления картинки на сайт, она появляется в вашем личном кабинете
+
+![LK](https://i.imgur.com/IYvVtEs.png)
 
 ## В разработке использованы
 
